@@ -1,0 +1,94 @@
+/tocloc/
+├── backend/                    # Código do backend (Java, Spring Boot)
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── meuProjeto/
+│   │   │   │           ├── controller/          # Controladores para cada tipo de usuário
+│   │   │   │           │   ├── VisitanteController.java
+│   │   │   │           │   ├── UsuarioController.java
+│   │   │   │           │   ├── AdminController.java
+│   │   │   │           │   └── AnfitriaoController.java
+│   │   │   │           ├── entity/              # Classes que representam as tabelas do banco
+│   │   │   │           │   ├── Visitante.java
+│   │   │   │           │   ├── Usuario.java
+│   │   │   │           │   ├── Admin.java
+│   │   │   │           │   └── Anfitriao.java
+│   │   │   │           ├── repository/          # Interfaces para manipulação do banco de dados
+│   │   │   │           │   ├── VisitanteRepository.java
+│   │   │   │           │   ├── UsuarioRepository.java
+│   │   │   │           │   ├── AdminRepository.java
+│   │   │   │           │   └── AnfitriaoRepository.java
+│   │   │   │           ├── service/             # Regras de negócio para cada usuário
+│   │   │   │           │   ├── VisitanteService.java
+│   │   │   │           │   ├── UsuarioService.java
+│   │   │   │           │   ├── AdminService.java
+│   │   │   │           │   └── AnfitriaoService.java
+│   │   │   │           ├── dto/                 # Classes para transporte de dados
+│   │   │   │           │   ├── UsuarioDTO.java
+│   │   │   │           │   └── ReservaDTO.java
+│   │   │   │           ├── security/            # Configurações de segurança (JWT, autenticação)
+│   │   │   │           │   ├── JwtTokenProvider.java
+│   │   │   │           │   └── SecurityConfig.java
+│   │   │   │           ├── exception/           # Manuseio de exceções específicas do projeto
+│   │   │   │           │   ├── CustomExceptionHandler.java
+│   │   │   │           │   └── EntityNotFoundException.java
+│   │   │   │           ├── config/              # Configurações adicionais (CORS, etc.)
+│   │   │   │           │   ├── CorsConfig.java
+│   │   │   │           │   └── AppConfig.java
+│   │   │   │           └── utils/               # Utilitários e funções auxiliares
+│   │   │   │               ├── DateUtils.java
+│   │   │   │               └── EmailValidator.java
+│   │   │   └── resources/
+│   │   │       ├── application.properties       # Configurações do Spring e banco de dados
+│   │   │       └── db/                          # Scripts SQL opcionais para criar tabelas
+│   │   │           └── schema.sql
+│   └── pom.xml                                  # Dependências Maven para o Spring Boot
+│
+├── frontend/                   # Código do frontend (React, Bootstrap, HTML, CSS)
+│   ├── public/                 # Arquivos públicos
+│   │   └── index.html          # Estrutura básica do HTML
+│   ├── src/
+│   │   ├── components/         # Componentes reutilizáveis
+│   │   │   ├── Visitante/
+│   │   │   ├── Usuario/
+│   │   │   ├── Admin/
+│   │   │   └── Anfitriao/
+│   │   ├── pages/              # Páginas para cada perfil
+│   │   │   ├── VisitantePage.js
+│   │   │   ├── UsuarioPage.js
+│   │   │   ├── AdminPage.js
+│   │   │   └── AnfitriaoPage.js
+│   │   ├── services/           # Requisições HTTP usando Axios
+│   │   │   ├── visitanteService.js
+│   │   │   ├── usuarioService.js
+│   │   │   ├── adminService.js
+│   │   │   └── anfitriaoService.js
+│   │   ├── hooks/              # Hooks customizados para lógica compartilhada
+│   │   │   ├── useAuth.js
+│   │   │   └── useReservation.js
+│   │   ├── context/            # Contexto global para gerenciamento de estado
+│   │   │   ├── AuthContext.js
+│   │   │   └── ReservationContext.js
+│   │   ├── assets/             # Imagens, ícones e fontes personalizadas
+│   │   │   ├── logo.png
+│   │   │   └── background.jpg
+│   │   ├── styles/             # Arquivos CSS personalizados
+│   │   │   ├── main.css
+│   │   ├── utils/              # Funções auxiliares para o frontend
+│   │   │   ├── dateFormatter.js
+│   │   │   └── validationUtils.js
+│   │   └── App.js              # Componente principal do React
+│   └── package.json            # Dependências do frontend (React, Axios, etc.)
+│
+├── database/                   # Arquivos do MySQL
+│   └── schema.sql              # Script para criar as tabelas iniciais (opcional)
+│
+├── scripts/                    # Scripts de automação
+│   ├── start-local.sh          # Script para inicializar o ambiente local
+│   └── populate-database.sql   # Script para popular o banco com dados iniciais
+│
+└── tests/                      # Organização de testes
+    ├── backend/                # Testes unitários e de integração para o backend
+    └── frontend/               # Testes de componentes e integração para o frontend
